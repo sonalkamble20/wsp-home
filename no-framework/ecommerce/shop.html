@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bulma Shop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <strong>Bulma Shop</strong>
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <div class="navbar-item">
+            <div class="field">
+              <p class="control has-icons-left">
+                <input class="input" id="search" type="text" placeholder="Search products">
+                <span class="icon is-left">
+                  <i class="fas fa-search"></i>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <button id="cart-button" class="button is-light">
+              <span class="icon">🛒</span>
+              <span>Cart</span>
+              <span id="cart-count" class="tag is-warning" style="margin-left:8px">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero is-medium is-bold hero-vibrant">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title has-text-white">Shop the Look</h1>
+          <h2 class="subtitle has-text-white">Curated gear and accessories — colorful, bold, and ready to ship.</h2>
+        </div>
+      </div>
+      <div class="hero-decor">
+        <!-- decorative blobs -->
+        <svg viewBox="0 0 600 200" preserveAspectRatio="none" class="hero-blob">
+          <defs>
+            <linearGradient id="g1" x1="0%" x2="100%" y1="0%" y2="0%">
+              <stop offset="0%" stop-color="#ff7eb6" />
+              <stop offset="50%" stop-color="#7afcff" />
+              <stop offset="100%" stop-color="#ffd86b" />
+            </linearGradient>
+          </defs>
+          <path d="M0,100 C150,200 350,0 600,100 L600,00 L0,0 Z" fill="url(#g1)" opacity=".12"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="level">
+          <div class="level-left">
+            <h1 class="title">Featured Products</h1>
+          </div>
+          <div class="level-right">
+            <div class="buttons">
+              <button class="button is-light">All</button>
+              <button class="button">Accessories</button>
+              <button class="button">Audio</button>
+              <button class="button">Bags</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-multiline" id="products">
+          <!-- Product 1 -->
+          <div class="column is-half-tablet is-one-quarter-desktop">
+            <div class="card product" data-id="p1" data-name="Vintage Camera" data-price="129.00">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="https://picsum.photos/seed/camera/800/600" alt="Camera">
+                </figure>
+                <div class="ribbon">New</div>
+              </div>
+              <div class="card-content">
+                <p class="title is-5">Vintage Camera <span class="tag is-warning is-pulled-right">$129</span></p>
+                <div class="content">Classic film-style camera with modern features.</div>
+                <div class="buttons">
+                  <button class="button is-gradient add-to-cart"><i class="fas fa-shopping-cart"></i>&nbsp;Add</button>
+                  <button class="button is-outlined is-gradient-light quick-view" data-id="p1">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="column is-half-tablet is-one-quarter-desktop">
+            <div class="card product" data-id="p2" data-name="Leather Backpack" data-price="89.99">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="https://picsum.photos/seed/backpack/800/600" alt="Backpack">
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="title is-5">Leather Backpack <span class="tag is-warning is-pulled-right">$89.99</span></p>
+                <div class="content">Durable, stylish, and fits a 15" laptop.</div>
+                <div class="buttons">
+                  <button class="button is-gradient add-to-cart"><i class="fas fa-shopping-cart"></i>&nbsp;Add</button>
+                  <button class="button is-outlined is-gradient-light quick-view" data-id="p2">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="column is-half-tablet is-one-quarter-desktop">
+            <div class="card product" data-id="p3" data-name="Noise-Canceling Headphones" data-price="199.00">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="https://picsum.photos/seed/headphones/800/600" alt="Headphones">
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="title is-5">Noise-Canceling Headphones <span class="tag is-warning is-pulled-right">$199</span></p>
+                <div class="content">Comfortable headphones with excellent sound.</div>
+                <div class="buttons">
+                  <button class="button is-gradient add-to-cart"><i class="fas fa-shopping-cart"></i>&nbsp;Add</button>
+                  <button class="button is-outlined is-gradient-light quick-view" data-id="p3">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="column is-half-tablet is-one-quarter-desktop">
+            <div class="card product" data-id="p4" data-name="Ceramic Mug" data-price="14.50">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="https://picsum.photos/seed/mug/800/600" alt="Mug">
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="title is-5">Ceramic Mug <span class="tag is-warning is-pulled-right">$14.50</span></p>
+                <div class="content">Microwave-safe mug with a matte finish.</div>
+                <div class="buttons">
+                  <button class="button is-gradient add-to-cart"><i class="fas fa-shopping-cart"></i>&nbsp;Add</button>
+                  <button class="button is-outlined is-gradient-light quick-view" data-id="p4">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal" id="cart-modal">
+      <div class="modal-background" id="cart-bg"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Your Cart</p>
+          <button class="delete" aria-label="close" id="close-cart"></button>
+        </header>
+        <section class="modal-card-body">
+          <div id="cart-items"></div>
+        </section>
+        <footer class="modal-card-foot">
+          <div style="flex:1">
+            <strong>Total: $<span id="cart-total">0.00</span></strong>
+          </div>
+          <button id="checkout" class="button is-success">Checkout</button>
+          <button id="clear-cart" class="button is-light">Clear</button>
+        </footer>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>&copy; Bulma Shop — Demo layout</p>
+      </div>
+    </footer>
+    <!-- Quickview modal -->
+    <div class="modal" id="quickview-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title quick-title">Product</p>
+          <button class="delete quick-close" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="columns is-vcentered">
+            <div class="column is-half">
+              <figure class="image is-4by3">
+                <img class="quick-img" src="" alt="">
+              </figure>
+            </div>
+            <div class="column is-half">
+              <h2 class="title is-4 quick-price">$0.00</h2>
+              <p class="quick-desc"></p>
+              <div style="margin-top:1rem">
+                <button class="button is-gradient quick-add">Add to cart</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="shop.js"></script>
+  </body>
+</html>

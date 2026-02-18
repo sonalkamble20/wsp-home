@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Zombie vs Humans</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🧟 ZvH</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="story.html" class="nav-link">Story</a></li>
+                <li><a href="characters.html" class="nav-link">Characters</a></li>
+                <li><a href="gameplay.html" class="nav-link">Gameplay</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="contact-section">
+        <div class="section-header">
+            <h1>Contact & Stats</h1>
+            <p>Reach out to us or check out the current battle statistics</p>
+        </div>
+
+        <div class="contact-container">
+            <section class="contact-form-section">
+                <h2>Get in Touch</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="faction">Which side are you on?</label>
+                        <select id="faction" name="faction">
+                            <option value="human">🤖 Human</option>
+                            <option value="zombie">🧟 Zombie</option>
+                            <option value="undecided">⚔️ Still Deciding</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </section>
+
+            <section class="stats-section">
+                <h2>Global Battle Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card human">
+                        <h3>Human Survivors</h3>
+                        <div class="stat-number">2,847,562</div>
+                        <p class="stat-label">Active Players</p>
+                    </div>
+                    <div class="stat-card zombie">
+                        <h3>Undead Hordes</h3>
+                        <div class="stat-number">5,621,893</div>
+                        <p class="stat-label">Active Players</p>
+                    </div>
+                </div>
+
+                <div class="stats-breakdown">
+                    <h3>All-Time Statistics</h3>
+                    <div class="stat-row">
+                        <span>Total Matches Played</span>
+                        <span class="stat-value">4,859,217</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Total Eliminations</span>
+                        <span class="stat-value">247,562,134</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Human Victories</span>
+                        <span class="stat-value">2,359,843 (48.6%)</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Zombie Victories</span>
+                        <span class="stat-value">2,499,374 (51.4%)</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Average Match Duration</span>
+                        <span class="stat-value">18 minutes</span>
+                    </div>
+                </div>
+
+                <div class="top-players">
+                    <h3>🏆 Top 5 Players This Month</h3>
+                    <ol class="player-list">
+                        <li>
+                            <span class="player-name">ShadowHunter</span>
+                            <span class="player-faction">🤖 Human</span>
+                            <span class="player-kills">8,432 Kills</span>
+                        </li>
+                        <li>
+                            <span class="player-name">NecroLord</span>
+                            <span class="player-faction">🧟 Zombie</span>
+                            <span class="player-kills">7,891 Kills</span>
+                        </li>
+                        <li>
+                            <span class="player-name">IceQueen</span>
+                            <span class="player-faction">🤖 Human</span>
+                            <span class="player-kills">7,654 Kills</span>
+                        </li>
+                        <li>
+                            <span class="player-name">BeastMode</span>
+                            <span class="player-faction">🧟 Zombie</span>
+                            <span class="player-kills">7,321 Kills</span>
+                        </li>
+                        <li>
+                            <span class="player-name">Phoenix</span>
+                            <span class="player-faction">🤖 Human</span>
+                            <span class="player-kills">6,987 Kills</span>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+
+        <section class="support-section">
+            <h2>Other Ways to Connect</h2>
+            <div class="social-grid">
+                <div class="social-card">
+                    <h3>📧 Email</h3>
+                    <p>support@zombievshuman.com</p>
+                </div>
+                <div class="social-card">
+                    <h3>🐦 Twitter</h3>
+                    <p>@ZombieVsHuman</p>
+                </div>
+                <div class="social-card">
+                    <h3>💬 Discord</h3>
+                    <p>discord.gg/zombievshuman</p>
+                </div>
+                <div class="social-card">
+                    <h3>📺 YouTube</h3>
+                    <p>youtube.com/@ZombieVsHuman</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Zombie vs Humans. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">Discord</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

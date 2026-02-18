@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Menu Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#dff7e6;
+      color:#000;
+    }
+
+    .menubar{
+      background:#2e9c3f;
+      padding:6px 10px;
+      display:flex;
+      gap:14px;
+      user-select:none;
+    }
+
+    .menu{
+      position:relative;
+      display:inline-block;
+    }
+
+    .menu > .label{
+      display:inline-block;
+      padding:4px 10px;
+      border:0;
+      background:transparent;
+      font-size:16px;
+      color:#000;
+      cursor:default;
+    }
+
+    .bold{ font-weight:700; }
+    .normal{ font-weight:400; }
+
+    .dropdown{
+      display:none;
+      position:absolute;
+      top:30px;
+      left:0;
+      background:#fff;
+      border:1px solid #888;
+      min-width:180px;
+      box-shadow:0 4px 8px rgba(0,0,0,.25);
+      z-index:10;
+      padding:4px 0;
+    }
+
+    .dropdown a{
+      display:block;
+      padding:6px 12px;
+      text-decoration:none;
+      color:#000;
+      font-size:14px;
+      white-space:nowrap;
+    }
+
+    .dropdown a:hover{
+      background:#e6e6e6;
+    }
+
+    .menu.hover:hover .dropdown{
+      display:block;
+    }
+
+    .menu.click{
+      outline:none;
+    }
+
+    .menu.click > button.label{
+      cursor:pointer;     
+      padding:4px 10px;
+    }
+
+    .menu.click > button.label{
+      border:0;
+      background:transparent;
+      font:inherit;
+      color:inherit;
+    }
+
+    .menu.click:focus-within .dropdown{
+      display:block;
+    }
+
+    .container{
+      max-width:900px;
+      margin:40px auto;
+      padding:0 20px;
+    }
+
+    .box{
+      background:#fff;
+      padding:16px 20px;
+      margin-bottom:24px;
+    }
+
+    .instructions{ border-left:6px solid #2e9c3f; }
+    .extra{ border-left:6px solid #f0c000; }
+
+    h2{
+      margin:0 0 8px 0;
+      font-size:20px;
+    }
+
+    p{
+      margin:0;
+      font-size:14px;
+      line-height:1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="menubar" aria-label="Menu bar">
+    <div class="menu hover">
+      <span class="label bold">File</span>
+      <div class="dropdown" role="menu" aria-label="File">
+        <a href="#" role="menuitem">New</a>
+        <a href="#" role="menuitem">Open</a>
+        <a href="#" role="menuitem">Save</a>
+        <a href="#" role="menuitem">Print</a>
+        <a href="#" role="menuitem">Close</a>
+      </div>
+    </div>
+
+    <div class="menu click">
+      <button class="label normal" type="button">Edit</button>
+      <div class="dropdown" role="menu" aria-label="Edit">
+        <a href="#" role="menuitem">Undo</a>
+        <a href="#" role="menuitem">Redo</a>
+        <a href="#" role="menuitem">Cut</a>
+        <a href="#" role="menuitem">Copy</a>
+        <a href="#" role="menuitem">Paste</a>
+        <a href="#" role="menuitem">Delete</a>
+        <a href="#" role="menuitem">Select All</a>
+      </div>
+    </div>
+
+    <div class="menu hover">
+      <span class="label bold">View</span>
+      <div class="dropdown" role="menu" aria-label="View">
+        <a href="#" role="menuitem">Zoom In</a>
+        <a href="#" role="menuitem">Zoom Out</a>
+        <a href="#" role="menuitem">Actual Size</a>
+        <a href="#" role="menuitem">Fit Page</a>
+        <a href="#" role="menuitem">Fit Width</a>
+        <a href="#" role="menuitem">Fit Height</a>
+        <a href="#" role="menuitem">Rotate Left</a>
+        <a href="#" role="menuitem">Rotate Right</a>
+        <a href="#" role="menuitem">Full Screen</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="box instructions">
+      <h2>Introduction</h2>
+      <p>
+        I am Sonal.
+My computer experience so far includes coursework and hands-on practice in programming and data structures. I primarily work with Java and have experience implementing core concepts such as object-oriented programming, recursion, and common data structures like arrays, stacks, queues, and trees. I have also practiced solving algorithmic problems on platforms such as LeetCode and NeetCode, which has helped me strengthen my logical thinking and problem-solving skills. In addition, I have worked on programming assignments and small projects that involved debugging, optimizing code, and translating theoretical concepts into practical implementations.
+
+      </p>
+    </div>
+
+    <div class="box extra">
+      <h2>Goals</h2>
+      <p>
+        I see myself using what I learn in this course directly in technical interviews and in my future role as a software engineer. The ability to analyze problems, choose appropriate data structures, and write efficient code is essential for building reliable and scalable software. This course will help me strengthen those skills and apply them in real-world development, whether in backend systems, application development, or larger software projects. It also aligns closely with my goal of securing a software engineering position and continuing to grow as a strong and confident developer.
+
+
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+/* VIVID THEME - Colorful, playful, attractive UI */
+
+:root {
+  --bg: #fffaf6;
+  --text: #12202b;
+  --muted: #6b7280;
+  --accent-a: #ff6b6b; /* pink */
+  --accent-b: #7afcff; /* aqua */
+  --accent-c: #ffd86b; /* yellow */
+  --accent-d: #7b61ff; /* purple */
+  --glass: rgba(255,255,255,0.7);
+}
+
+html,body { height:100%; }
+body {
+  margin:0; background: linear-gradient(180deg,var(--bg) 0%, #ffffff 40%); color:var(--text);
+}
+
+/* fonts */
+body, button, input { font-family: 'Poppins', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+
+/* Animated hero gradient */
+.hero-vibrant { position:relative; overflow:hidden; background: linear-gradient(90deg,var(--accent-a),var(--accent-d),var(--accent-b)); background-size: 500% 500%; animation: gradientShift 9s linear infinite; }
+@keyframes gradientShift { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%} }
+.hero-vibrant .title, .hero-vibrant .subtitle { text-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+
+.hero-decor { position:absolute; left:0; right:0; bottom:-6px; pointer-events:none }
+.hero-blob { width:100%; height:140px; display:block }
+
+/* Product grid */
+.columns { gap: 1.5rem; }
+.product { transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s ease; }
+.product .card { border-radius:14px; overflow:hidden; position:relative; background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7)); box-shadow: 0 8px 30px rgba(12,18,30,0.06); }
+.product:hover .card { transform: translateY(-10px) rotate(-0.5deg); box-shadow: 0 24px 70px rgba(12,18,30,0.12); }
+.card-image img { width:100%; height:220px; object-fit:cover; display:block; }
+.card-content { padding:1rem 1.1rem; }
+.card-content .content { color:var(--muted); margin-top:0.5rem }
+
+.ribbon { position:absolute; left:12px; top:12px; background:linear-gradient(90deg,var(--accent-c),var(--accent-a)); color:#111; padding:6px 12px; border-radius:20px; font-weight:700; box-shadow: 0 8px 20px rgba(123,97,255,0.12); }
+
+/* Buttons: bold gradients */
+.is-gradient { background: linear-gradient(90deg,var(--accent-d),var(--accent-b)); color:#fff; border:none; box-shadow: 0 8px 30px rgba(123,97,255,0.12); border-radius:8px; }
+.is-gradient:hover { transform: translateY(-3px); box-shadow: 0 18px 50px rgba(123,97,255,0.18); }
+.is-gradient-light { background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); color:#fff; border:1px solid rgba(255,255,255,0.08); }
+.buttons .button { border-radius:8px; }
+
+/* Cart count pulse */
+.pulse { animation: pulseCart .6s cubic-bezier(.2,.8,.2,1); }
+@keyframes pulseCart { 0%{transform:scale(1)} 30%{transform:scale(1.45)} 100%{transform:scale(1)} }
+
+/* Toast */
+.toast { position: fixed; left:50%; transform:translateX(-50%) translateY(12px); bottom:6vh; background: rgba(2,6,23,0.9); color:#fff; padding:10px 16px; border-radius:12px; opacity:0; transition: all .25s ease; z-index:60; font-weight:600 }
+.toast.visible { opacity:1; transform:translateX(-50%) translateY(0); }
+
+/* Quickview modal tweaks */
+#quickview-modal .modal-card { max-width:900px; border-radius:12px; overflow:hidden }
+.quick-img { border-radius:8px; width:100%; height:auto }
+
+/* responsive */
+@media (max-width:768px){ .card-image img{height:160px} .hero-blob{height:90px} }
+
+
