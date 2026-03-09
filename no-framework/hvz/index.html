@@ -3,82 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zombie vs Humans - The Final Battle</title>
+    <title>Humans vs Zombies - SUNY New Paltz</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
+    <!-- Animated zombie in background -->
+    <div class="zombie-walk">🧟</div>
+    
+    <nav>
         <div class="nav-container">
-            <div class="logo">🧟 ZvH</div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="menu.html" class="nav-link active">CSS Menu Assignment</a></li>
-                 <li><a href="../bulma/todo.html" class="nav-link active">Bulma practice</a></li>
-                <li><a href="story.html" class="nav-link">Story</a></li>
-                <li><a href="characters.html" class="nav-link">Characters</a></li>
-                <li><a href="gameplay.html" class="nav-link">Gameplay</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <a href="index.html" class="logo">HvZ <span>New Paltz</span></a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul id="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="rules.html">Rules</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="survival.html">Survival Guide</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>ZOMBIE VS HUMANS</h1>
-            <p>The ultimate battle for survival begins</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary">Play Now</button>
-                <button class="btn btn-secondary">Learn More</button>
+    <main>
+        <section class="hero">
+            <h1 class="float">Humans vs Zombies</h1>
+            <p class="subtitle">System Status: <span>CRITICAL ALERT</span></p>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                Protocol Initiated at <span>SUNY New Paltz</span>. Choose your side.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="register.html" class="btn btn-primary shake">Initialize Registration</a>
+                <a href="rules.html" class="btn btn-secondary">Access Protocols</a>
             </div>
-        </div>
-        <div class="hero-image">
-            <div class="hero-visual">🧟‍♂️ vs 🤖</div>
-        </div>
-    </header>
+        </section>
 
-    <section class="features">
-        <h2>Why Play?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">⚔️</div>
-                <h3>Epic Battles</h3>
-                <p>Intense PvP gameplay with strategic combat mechanics</p>
+        <!-- Countdown to next game -->
+        <section class="card" style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="color: var(--neon-red); font-size: 2rem; margin-bottom: 1rem;">
+                ⚠️ OUTBREAK COUNTDOWN
+            </h2>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="number" id="days">00</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">Seconds</span>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎮</div>
-                <h3>Two Teams</h3>
-                <p>Play as a zombie or human with unique abilities</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🏆</div>
-                <h3>Leaderboards</h3>
-                <p>Compete globally and climb the ranks</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌍</div>
-                <h3>Multiple Maps</h3>
-                <p>Explore diverse environments and strategic locations</p>
-            </div>
-        </div>
-    </section>
+            <p style="color: var(--text-muted); margin-top: 1rem;">
+                T-Minus to Deployment: March 15th, 1200 Hours
+            </p>
+        </section>
 
-    <section class="cta">
-        <h2>Ready to Pick a Side?</h2>
-        <p>Decide your fate. Will you survive as a human or rise as a zombie?</p>
-        <button class="btn btn-large">Start Playing</button>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2026 Zombie vs Humans. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#">Twitter</a>
-                <a href="#">Discord</a>
-                <a href="#">YouTube</a>
+        <!-- Live stats -->
+        <section style="margin-bottom: 3rem;">
+            <div class="section-header">
+                <h2>📊 Live Telemetry</h2>
+                <p style="color: var(--text-muted);">Real-time population tracking</p>
             </div>
-        </div>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <span class="stat-number human" id="human-count">127</span>
+                    <span class="stat-label">Active Units</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number zombie" id="zombie-count">43</span>
+                    <span class="stat-label">Infected</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number" style="color: var(--neon-amber);" id="days-remaining">4</span>
+                    <span class="stat-label">Containment Days</span>
+                </div>
+            </div>
+
+            <!-- Visual progress bar -->
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="color: var(--neon-blue);">[HUMAN]</span>
+                    <span style="color: var(--neon-purple);">[ZOMBIE]</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill">
+                        <div class="progress-humans" id="progress-humans" style="width: 75%;"></div>
+                        <div class="progress-zombies" id="progress-zombies" style="width: 25%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section>
+            <div class="section-header">
+                <h2>⚡ Mission Objectives</h2>
+                <p style="color: var(--text-muted);">Why participate in the simulation?</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3>🏃 Evasion Tactics</h3>
+                    <p>Execute evasion maneuvers across sector Campus. Navigate through safe zones and avoid hostile entities.</p>
+                </div>
+                <div class="card">
+                    <h3>🤝 Squad Formation</h3>
+                    <p>Establish neural links with other operatives. Form alliances to increase survival probability.</p>
+                </div>
+                <div class="card">
+                    <h3>🎯 Directives</h3>
+                    <p>Complete assigned objectives to secure territory and protect high-value assets effectively.</p>
+                </div>
+                <div class="card">
+                    <h3>🔫 Weaponry</h3>
+                    <p>Utilize approved foam-projectile launchers and improvised heavy socks. Precision is key.</p>
+                </div>
+                <div class="card">
+                    <h3>🏆 Status Rank</h3>
+                    <p>Climb the hierarchy. Top operatives will be memorialized in the system database.</p>
+                </div>
+                <div class="card">
+                    <h3>🎭 Mutation</h3>
+                    <p>Infection is not termination. Join the hive mind and hunt your former squadmates.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent activity feed -->
+        <section style="margin-top: 3rem;">
+            <div class="section-header">
+                <h2>📡 Intercepted Comms</h2>
+                <p style="color: var(--text-muted);">Live feed from sector sensors</p>
+            </div>
+
+            <div class="card">
+                <div id="activity-feed">
+                    <!-- Activities will be populated by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>SYSTEM: Humans vs Zombies // SUNY New Paltz Node</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="mailto:hvz@newpaltz.edu">[CONTACT_ADMIN]</a> | 
+            <a href="https://instagram.com/newpaltzhvz" target="_blank">[INSTOGRAM_FEED]</a> | 
+            <a href="https://discord.gg/newpaltzhvz" target="_blank">[DISCORD_CHANNEL]</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+            WARNING: Academic responsibilities remain priority alpha.
+        </p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            // Set the game date - March 15, 2026 at noon
+            const gameDate = new Date('March 15, 2026 12:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = gameDate - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.getElementById('countdown').innerHTML = '<p style="color: var(--neon-red); font-family: Orbitron; font-size: 2rem;">⚠ ALERT: CONTAINMENT BREACH ⚠</p>';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Simulate live stats changes
+        function animateStats() {
+            const humans = document.getElementById('human-count');
+            const zombies = document.getElementById('zombie-count');
+            
+            setInterval(() => {
+                const currentHumans = parseInt(humans.textContent);
+                const currentZombies = parseInt(zombies.textContent);
+                
+                // Randomly decrease humans and increase zombies
+                if (Math.random() > 0.7 && currentHumans > 10) {
+                    const converted = Math.floor(Math.random() * 3) + 1;
+                    humans.textContent = currentHumans - converted;
+                    zombies.textContent = currentZombies + converted;
+                    
+                    // Update progress bar
+                    const total = (currentHumans - converted) + (currentZombies + converted);
+                    const humanPercent = ((currentHumans - converted) / total) * 100;
+                    document.getElementById('progress-humans').style.width = humanPercent + '%';
+                    document.getElementById('progress-zombies').style.width = (100 - humanPercent) + '%';
+                }
+            }, 5000);
+        }
+        animateStats();
+
+        // Activity feed
+        const activities = [
+            { time: '2 min ago', text: '🧟 ID_ZombieMaster has tagged ID_HumanRunner near Sector Library', type: 'zombie' },
+            { time: '5 min ago', text: '👤 Operative Sam completed "Supply Run" directive', type: 'human' },
+            { time: '8 min ago', text: '⚠️ BIOLOGICAL THREAT DETECTED: Student Union Sector', type: 'warning' },
+            { time: '12 min ago', text: '👤 Squad Alpha secured Science Building perimeter', type: 'human' },
+            { time: '15 min ago', text: '🧟 3 Operatives assimilated at Cargo Bay (Parking Lot)', type: 'zombie' },
+            { time: '20 min ago', text: '📢 Directive Update: "Rescue the Professor"', type: 'mission' },
+            { time: '25 min ago', text: '👤 ID_NerfNinja neutralized 5 hostiles', type: 'human' },
+            { time: '30 min ago', text: '🧟 PATIENT ZERO HAS AWAKENED', type: 'zombie' }
+        ];
+
+        function populateActivityFeed() {
+            const feed = document.getElementById('activity-feed');
+            let html = '';
+            
+            activities.forEach(activity => {
+                let color = 'var(--text-muted)';
+                if (activity.type === 'zombie') color = 'var(--neon-purple)';
+                if (activity.type === 'human') color = 'var(--neon-blue)';
+                if (activity.type === 'warning') color = 'var(--neon-amber)';
+                if (activity.type === 'mission') color = 'var(--neon-red)';
+                
+                html += `
+                    <div style="padding: 1rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: ${color};">${activity.text}</span>
+                        <span style="color: var(--text-muted); font-size: 0.8rem;">${activity.time}</span>
+                    </div>
+                `;
+            });
+            
+            feed.innerHTML = html;
+        }
+        populateActivityFeed();
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
